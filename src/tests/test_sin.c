@@ -11,8 +11,6 @@ END_TEST
 START_TEST(sin_5) { ck_assert_int_eq(s21_sin(0.99), sin(0.99)); }
 END_TEST
 
-
-
 Suite *test_sin(void) {
   Suite *suite = suite_create("***s21_sin***");
   TCase *test_case = tcase_create("s21_sin_tc");

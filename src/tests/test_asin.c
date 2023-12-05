@@ -17,7 +17,6 @@ END_TEST
 START_TEST(asin_8) { ck_assert_int_eq(s21_asin(0.564654), asin(0.564654)); }
 END_TEST
 
-
 Suite *test_asin(void) {
   Suite *suite = suite_create("***s21_asin***");
   TCase *test_case = tcase_create("s21_asin_tc");

@@ -11,8 +11,6 @@ END_TEST
 START_TEST(sqrt_5) { ck_assert_int_eq(s21_sqrt(0.99), sqrt(0.99)); }
 END_TEST
 
-
-
 Suite *test_sqrt(void) {
   Suite *suite = suite_create("***s21_sqrt***");
   TCase *test_case = tcase_create("s21_sqrt_tc");

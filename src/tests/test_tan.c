@@ -11,8 +11,6 @@ END_TEST
 START_TEST(tan_5) { ck_assert_int_eq(s21_tan(0.99), tan(0.99)); }
 END_TEST
 
-
-
 Suite *test_tan(void) {
   Suite *suite = suite_create("***s21_tan***");
   TCase *test_case = tcase_create("s21_tan_tc");

@@ -11,8 +11,6 @@ END_TEST
 START_TEST(log_5) { ck_assert_int_eq(s21_log(S21_NAN), log(S21_NAN)); }
 END_TEST
 
-
-
 Suite *test_log(void) {
   Suite *suite = suite_create("***s21_log***");
   TCase *test_case = tcase_create("s21_log_tc");

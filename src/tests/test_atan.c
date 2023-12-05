@@ -9,8 +9,6 @@ END_TEST
 START_TEST(atan_4) { ck_assert_int_eq(s21_atan(0.654), atan(0.654)); }
 END_TEST
 
-
-
 Suite *test_atan(void) {
   Suite *suite = suite_create("***s21_atan***");
   TCase *test_case = tcase_create("s21_atan_tc");

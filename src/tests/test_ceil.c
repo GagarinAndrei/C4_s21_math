@@ -9,8 +9,6 @@ END_TEST
 START_TEST(ceil_4) { ck_assert_int_eq(s21_ceil(-0.654), ceil(-0.654)); }
 END_TEST
 
-
-
 Suite *test_ceil(void) {
   Suite *suite = suite_create("***s21_ceil***");
   TCase *test_case = tcase_create("s21_ceil_tc");
