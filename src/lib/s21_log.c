@@ -7,7 +7,7 @@ long double s21_log(double x) {
   double compare;
 
   if (x == 0) {
-    result = S21_INF;
+    result = -S21_INF;
   } else if ((x != x) || x < 0) {
     result = S21_NAN;
   } else if (x == -S21_INF) {
