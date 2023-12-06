@@ -1,12 +1,12 @@
 #include "tests.h"
 
-START_TEST(exp_1) { ck_assert_int_eq(s21_exp(0.0), exp(0.0)); }
+START_TEST(exp_1) { ck_assert_ldouble_eq_tol(s21_exp(0.0), exp(0.0), 1e-6); }
 END_TEST
-START_TEST(exp_2) { ck_assert_int_eq(s21_exp(-24.654), exp(-24.654)); }
+START_TEST(exp_2) { ck_assert_ldouble_eq_tol(s21_exp(-24.654), exp(-24.654), 1e-6); }
 END_TEST
-START_TEST(exp_3) { ck_assert_int_eq(s21_exp(0.22), exp(0.22)); }
+START_TEST(exp_3) { ck_assert_ldouble_eq_tol(s21_exp(0.22), exp(0.22), 1e-6); }
 END_TEST
-START_TEST(exp_4) { ck_assert_int_eq(s21_exp(1.27), exp(1.27)); }
+START_TEST(exp_4) { ck_assert_ldouble_eq_tol(s21_exp(1.27), exp(1.27), 1e-6); }
 END_TEST
 
 Suite *test_exp(void) {

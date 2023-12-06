@@ -1,12 +1,12 @@
 #include "tests.h"
 
-START_TEST(cos_1) { ck_assert_int_eq(s21_cos(-0), cos(-0)); }
+START_TEST(cos_1) { ck_assert_ldouble_eq_tol(s21_cos(-0), cos(-0), 1e-6); }
 END_TEST
-START_TEST(cos_2) { ck_assert_int_eq(s21_cos(-1), cos(-1)); }
+START_TEST(cos_2) { ck_assert_ldouble_eq_tol(s21_cos(-1), cos(-1), 1e-6); }
 END_TEST
-START_TEST(cos_3) { ck_assert_int_eq(s21_cos(-3.456), cos(-3.456)); }
+START_TEST(cos_3) { ck_assert_ldouble_eq_tol(s21_cos(-3.456), cos(-3.456), 1e-6); }
 END_TEST
-START_TEST(cos_4) { ck_assert_int_eq(s21_cos(0.654), cos(0.654)); }
+START_TEST(cos_4) { ck_assert_ldouble_eq_tol(s21_cos(0.654), cos(0.654), 1e-6); }
 END_TEST
 
 Suite *test_cos(void) {

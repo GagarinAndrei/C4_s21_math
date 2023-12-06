@@ -1,12 +1,12 @@
 #include "tests.h"
 
-START_TEST(floor_1) { ck_assert_int_eq(s21_floor(-0.0), floor(-0.0)); }
+START_TEST(floor_1) { ck_assert_ldouble_eq(s21_floor(-0.0), floor(-0.0)); }
 END_TEST
-START_TEST(floor_2) { ck_assert_int_eq(s21_floor(24.654), floor(24.654)); }
+START_TEST(floor_2) { ck_assert_ldouble_eq(s21_floor(24.654), floor(24.654)); }
 END_TEST
-START_TEST(floor_3) { ck_assert_int_eq(s21_floor(0.2), floor(0.2)); }
+START_TEST(floor_3) { ck_assert_ldouble_eq(s21_floor(0.2), floor(0.2)); }
 END_TEST
-START_TEST(floor_4) { ck_assert_int_eq(s21_floor(-0.27), floor(-0.27)); }
+START_TEST(floor_4) { ck_assert_ldouble_eq(s21_floor(-0.27), floor(-0.27)); }
 END_TEST
 
 Suite *test_floor(void) {

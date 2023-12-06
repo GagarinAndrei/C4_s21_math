@@ -1,12 +1,12 @@
 #include "tests.h"
 
-START_TEST(fabs_1) { ck_assert_int_eq(s21_fabs(-0.0), fabs(-0.0)); }
+START_TEST(fabs_1) { ck_assert_ldouble_eq(s21_fabs(-0.0), fabs(-0.0)); }
 END_TEST
-START_TEST(fabs_2) { ck_assert_int_eq(s21_fabs(-24.654), fabs(-24.654)); }
+START_TEST(fabs_2) { ck_assert_ldouble_eq(s21_fabs(-24.654), fabs(-24.654)); }
 END_TEST
-START_TEST(fabs_3) { ck_assert_int_eq(s21_fabs(0.2), fabs(0.2)); }
+START_TEST(fabs_3) { ck_assert_ldouble_eq(s21_fabs(0.2), fabs(0.2)); }
 END_TEST
-START_TEST(fabs_4) { ck_assert_int_eq(s21_fabs(-0.27), fabs(-0.27)); }
+START_TEST(fabs_4) { ck_assert_ldouble_eq(s21_fabs(-0.27), fabs(-0.27)); }
 END_TEST
 
 Suite *test_fabs(void) {

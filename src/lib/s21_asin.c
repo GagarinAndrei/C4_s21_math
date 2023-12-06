@@ -1,15 +1,15 @@
 #include "s21_math.h"
+#include <math.h>
+#include <stdio.h>
 
 long double s21_asin(double x) {
   long double res = 0.0;
-  if (s21_fabs(x) > 1 || x == S21_INF || x == -S21_INF) res = S21_NAN;
+  if (s21_fabs(x) > 1 || x == S21_INF || x == -S21_INF) return S21_NAN;;
+  if (x == S21_NAN) return S21_NAN;
   if (x == 1) return S21_PI / 2;
-  if (x == -1)
-    return -S21_PI / 2;
-  else if (x == S21_NAN)
-    res = 0;
-  else if (x == 0 || x == -0.0)
-    res = 0.0;
+  if (x == -1) return -S21_PI / 2;
+  if (x == 0 || x == -0.0)
+    return 0.0;
   else {
     double start_guess = 3 * x / (2 + s21_sqrt(1 - s21_pow(x, 2)));
     double prev_guess;
@@ -21,3 +21,9 @@ long double s21_asin(double x) {
   }
   return res;
 }
+// int main(){
+// printf("%Lf\n", s21_asin(0.9));
+// printf("%f", asin(0.9));
+
+//   return 0;
+// }

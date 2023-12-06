@@ -1,15 +1,17 @@
 #include "tests.h"
 
-START_TEST(fmod_1) { ck_assert_int_eq(s21_fmod(-0.0, -0.0), fmod(-0.0, -0.0)); }
-END_TEST
-START_TEST(fmod_2) {
-  ck_assert_int_eq(s21_fmod(-24.654, -24.654), fmod(-24.654, -24.654));
+START_TEST(fmod_1) {
+  ck_assert_ldouble_eq(s21_fmod(-0.0, -0.0), fmod(-0.0, -0.0));
 }
 END_TEST
-START_TEST(fmod_3) { ck_assert_int_eq(s21_fmod(0.2, 0.2), fmod(0.2, 0.2)); }
+START_TEST(fmod_2) {
+  ck_assert_ldouble_eq(s21_fmod(-24.654, -24.654), fmod(-24.654, -24.654));
+}
+END_TEST
+START_TEST(fmod_3) { ck_assert_ldouble_eq(s21_fmod(0.2, 0.2), fmod(0.2, 0.2)); }
 END_TEST
 START_TEST(fmod_4) {
-  ck_assert_int_eq(s21_fmod(-0.27, -0.27), fmod(-0.27, -0.27));
+  ck_assert_ldouble_eq(s21_fmod(-1.27, -0.27), fmod(-1.27, -0.27));
 }
 END_TEST
 

@@ -1,14 +1,14 @@
 #include "tests.h"
 
-START_TEST(tan_1) { ck_assert_int_eq(s21_tan(0), tan(0)); }
+START_TEST(tan_1) { ck_assert_ldouble_eq_tol(s21_tan(0), tan(0), 1e-6); }
 END_TEST
-START_TEST(tan_2) { ck_assert_int_eq(s21_tan(-1), tan(-1)); }
+START_TEST(tan_2) { ck_assert_ldouble_eq_tol(s21_tan(-1), tan(-1), 1e-6); }
 END_TEST
-START_TEST(tan_3) { ck_assert_int_eq(s21_tan(2.2), tan(2.2)); }
+START_TEST(tan_3) { ck_assert_ldouble_eq_tol(s21_tan(2.2), tan(2.2), 1e-6); }
 END_TEST
-START_TEST(tan_4) { ck_assert_int_eq(s21_tan(-0.5), tan(-0.5)); }
+START_TEST(tan_4) { ck_assert_ldouble_eq_tol(s21_tan(-0.5), tan(-0.5), 1e-6); }
 END_TEST
-START_TEST(tan_5) { ck_assert_int_eq(s21_tan(0.99), tan(0.99)); }
+START_TEST(tan_5) { ck_assert_ldouble_eq_tol(s21_tan(0.99), tan(0.99), 1e-6); }
 END_TEST
 
 Suite *test_tan(void) {

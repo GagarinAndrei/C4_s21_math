@@ -1,7 +1,10 @@
 #include "s21_math.h"
+#include <stdio.h>
+#include <math.h>
 
 long double s21_pow(double base, double exp) {
   if (exp == 0) return 1;
+  if(base == 0) return 0;
 
   long double result = 1.0;
 
@@ -15,3 +18,10 @@ long double s21_pow(double base, double exp) {
 
   return result;
 }
+
+// int main(){
+// printf("%Lf\n", s21_pow(0.25,0.2));
+// printf("%f", pow(0.25,0.2));
+
+//   return 0;
+// }

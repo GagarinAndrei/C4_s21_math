@@ -1,12 +1,12 @@
 #include "tests.h"
 
-START_TEST(ceil_1) { ck_assert_int_eq(s21_ceil(-0), ceil(-0)); }
+START_TEST(ceil_1) { ck_assert_ldouble_eq(s21_ceil(-0), ceil(-0)); }
 END_TEST
-START_TEST(ceil_2) { ck_assert_int_eq(s21_ceil(-1), ceil(-1)); }
+START_TEST(ceil_2) { ck_assert_ldouble_eq(s21_ceil(-1), ceil(-1)); }
 END_TEST
-START_TEST(ceil_3) { ck_assert_int_eq(s21_ceil(-3.456), ceil(-3.456)); }
+START_TEST(ceil_3) { ck_assert_ldouble_eq(s21_ceil(-3.456), ceil(-3.456)); }
 END_TEST
-START_TEST(ceil_4) { ck_assert_int_eq(s21_ceil(-0.654), ceil(-0.654)); }
+START_TEST(ceil_4) { ck_assert_ldouble_eq(s21_ceil(-0.654), ceil(-0.654)); }
 END_TEST
 
 Suite *test_ceil(void) {

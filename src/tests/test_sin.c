@@ -1,14 +1,14 @@
 #include "tests.h"
 
-START_TEST(sin_1) { ck_assert_int_eq(s21_sin(0), sin(0)); }
+START_TEST(sin_1) { ck_assert_ldouble_eq_tol(s21_sin(0), sin(0), 1e-6); }
 END_TEST
-START_TEST(sin_2) { ck_assert_int_eq(s21_sin(-1), sin(-1)); }
+START_TEST(sin_2) { ck_assert_ldouble_eq_tol(s21_sin(-1), sin(-1), 1e-6); }
 END_TEST
-START_TEST(sin_3) { ck_assert_int_eq(s21_sin(2.2), sin(2.2)); }
+START_TEST(sin_3) { ck_assert_ldouble_eq_tol(s21_sin(2.2), sin(2.2), 1e-6); }
 END_TEST
-START_TEST(sin_4) { ck_assert_int_eq(s21_sin(-0.5), sin(-0.5)); }
+START_TEST(sin_4) { ck_assert_ldouble_eq_tol(s21_sin(-0.5), sin(-0.5), 1e-6); }
 END_TEST
-START_TEST(sin_5) { ck_assert_int_eq(s21_sin(0.99), sin(0.99)); }
+START_TEST(sin_5) { ck_assert_ldouble_eq_tol(s21_sin(0.99), sin(0.99), 1e-6); }
 END_TEST
 
 Suite *test_sin(void) {
