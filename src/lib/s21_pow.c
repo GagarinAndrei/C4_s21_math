@@ -1,10 +1,11 @@
-#include "s21_math.h"
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
+
+#include "s21_math.h"
 
 long double s21_pow(double base, double exp) {
   if (exp == 0) return 1;
-  if(base == 0) return 0;
+  if (base == 0) return 0;
 
   long double result = 1.0;
 

@@ -1,10 +1,12 @@
-#include "s21_math.h"
 #include <math.h>
 #include <stdio.h>
 
+#include "s21_math.h"
+
 long double s21_asin(double x) {
   long double res = 0.0;
-  if (s21_fabs(x) > 1 || x == S21_INF || x == -S21_INF) return S21_NAN;;
+  if (s21_fabs(x) > 1 || x == S21_INF || x == -S21_INF) return S21_NAN;
+  ;
   if (x == S21_NAN) return S21_NAN;
   if (x == 1) return S21_PI / 2;
   if (x == -1) return -S21_PI / 2;
