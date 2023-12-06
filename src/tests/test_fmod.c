@@ -1,7 +1,7 @@
 #include "tests.h"
 
 START_TEST(fmod_1) {
-  ck_assert_ldouble_eq(s21_fmod(-0.0, -0.0), fmod(-0.0, -0.0));
+  ck_assert_double_nan(s21_fmod(-0.0, -0.0));
 }
 END_TEST
 START_TEST(fmod_2) {

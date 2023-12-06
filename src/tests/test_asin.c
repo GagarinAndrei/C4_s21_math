@@ -12,9 +12,9 @@ START_TEST(asin_7) { ck_assert_ldouble_eq(s21_asin(-0), asin(-0)); }
 END_TEST
 START_TEST(asin_8) { ck_assert_ldouble_eq_tol(s21_asin(0.56), asin(0.56), 1e-6); }
 END_TEST
-START_TEST(asin_9) { ck_assert_ldouble_eq(s21_asin(S21_INF), asin(S21_INF)); }
+START_TEST(asin_9) { ck_assert_double_nan(s21_asin(S21_INF)); }
 END_TEST
-START_TEST(asin_10) { ck_assert_ldouble_eq(s21_asin(-S21_INF), asin(-S21_INF)); }
+START_TEST(asin_10) { ck_assert_double_nan(s21_asin(-S21_INF)); }
 END_TEST
 
 Suite *test_asin(void) {
