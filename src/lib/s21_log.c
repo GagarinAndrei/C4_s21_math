@@ -25,11 +25,3 @@ long double s21_log(double x) {
 
   return result + copy_exp;
 }
-
-// int main() {
-
-// 0.000001
-//      printf("%Lf\n", s21_log(4.56));
-//      printf("%f\n", log(4.56));
-//      return 0;
-//  }

@@ -1,6 +1,6 @@
 #include "s21_math.h"
 
-long double s21_fmod(double x, double y) {  // готово
+long double s21_fmod(double x, double y) {
   if (y == 0.0 || y == -0.0) return S21_NAN;
 
   long double result = 0.0;

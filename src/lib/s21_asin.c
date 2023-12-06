@@ -1,6 +1,3 @@
-#include <math.h>
-#include <stdio.h>
-
 #include "s21_math.h"
 
 long double s21_asin(double x) {
@@ -23,9 +20,3 @@ long double s21_asin(double x) {
   }
   return res;
 }
-// int main(){
-// printf("%Lf\n", s21_asin(0.9));
-// printf("%f", asin(0.9));
-
-//   return 0;
-// }
