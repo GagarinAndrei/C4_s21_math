@@ -1,4 +1,4 @@
-#include "s21_math.h"
+#include "../s21_math.h"
 
 long double s21_log(double x) {
   long double n = x;

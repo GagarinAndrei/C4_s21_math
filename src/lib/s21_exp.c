@@ -1,4 +1,4 @@
-#include "s21_math.h"
+#include "../s21_math.h"
 
 long double s21_exp(double x) {
   if (x < 0) return 0.0;

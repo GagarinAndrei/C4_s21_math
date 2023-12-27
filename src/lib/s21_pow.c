@@ -1,4 +1,4 @@
-#include "s21_math.h"
+#include "../s21_math.h"
 
 long double s21_pow(double base, double exp) {
   if (exp == 0) return 1;

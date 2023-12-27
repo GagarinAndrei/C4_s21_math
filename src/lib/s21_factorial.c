@@ -1,5 +1,5 @@
 
-#include "s21_math.h"
+#include "../s21_math.h"
 int s21_factorial(int n) {
   if (n < 0) {
     return S21_NAN;
