@@ -6,8 +6,6 @@
 #define S21_NAN (0.0 / 0.0)
 #define accur 1e-10
 #define S21_INF 1.0 / 0.0L
-// #define S21_INF -1.0 / 0.0L
-// #include <stdio.h>
 int s21_abs(int x);
 int s21_factorial(int n);
 long double s21_tan(double x);

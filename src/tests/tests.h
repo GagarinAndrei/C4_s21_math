@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../lib/s21_math.h"
+#include "../s21_math.h"
 
 Suite *test_abs(void);
 Suite *test_acos(void);
