@@ -10,7 +10,7 @@ endif
 all: clean s21_math.a
 
 s21_math.a:
-	$(CC) $(CFLAGS) lib/*.c -c
+	$(CC) $(CFLAGS) s21_math.c -c
 	ar rcs s21_math.a *.o
 	
 test: clean s21_math.a
@@ -18,14 +18,14 @@ test: clean s21_math.a
 	./s21_math
 
 gcov_report: clean s21_math.a
-	$(CC) $(CFALGS) tests/*.c lib/*.c $(CHECKFLAGS) -fprofile-arcs -ftest-coverage -lgcov -o s21_math
+	$(CC) $(CFALGS) tests/*.c s21_math.c $(CHECKFLAGS) -fprofile-arcs -ftest-coverage -lgcov -o s21_math
 	./s21_math
 	lcov -t "./s21_math" -o report.info --no-external -c -d .
 	genhtml -o report report.info
-	firefox ./report/index.html
+	open ./report/index.html
 
 clang:
-	clang-format -n -style=google tests/*.c tests/*.h lib/*.c *.h
+	clang-format -n -style=google tests/*.c tests/*.h lib/*.c *.h *.c
 
 valgrind: clean s21_math.a
 	$(CC) $(CFLAGS) tests/*.c s21_math.a $(CHECKFLAGS) -o s21_math
