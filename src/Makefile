@@ -2,8 +2,7 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra -std=c11
 
 ifeq ($(shell uname), Linux)
-	CHECKFLAGS=-lcheck -lm -lpthread -lrt 
-#-lsubunit
+	CHECKFLAGS=-lcheck -lm -lpthread -lrt -lsubunit
 else
 	CHECKFLAGS=-lcheck -lm -lpthread
 endif
