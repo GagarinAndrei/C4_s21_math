@@ -16,7 +16,7 @@ START_TEST(log_5) { ck_assert_double_eq(s21_log(S21_E), log(S21_E)); }
 END_TEST
 
 Suite *test_log(void) {
-  Suite *suite = suite_create("***s21_log***");
+  Suite *suite = suite_create("\033[45m***s21_log***\033[0m");
   TCase *test_case = tcase_create("s21_log_tc");
   tcase_add_test(test_case, log_1);
   tcase_add_test(test_case, log_2);

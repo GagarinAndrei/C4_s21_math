@@ -12,7 +12,7 @@ START_TEST(tan_5) { ck_assert_ldouble_eq_tol(s21_tan(0.99), tan(0.99), 1e-6); }
 END_TEST
 
 Suite *test_tan(void) {
-  Suite *suite = suite_create("***s21_tan***");
+  Suite *suite = suite_create("\033[45m***s21_tan***\033[0m");
   TCase *test_case = tcase_create("s21_tan_tc");
   tcase_add_test(test_case, tan_1);
   tcase_add_test(test_case, tan_2);

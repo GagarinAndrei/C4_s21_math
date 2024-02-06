@@ -12,7 +12,7 @@ START_TEST(atan_4) {
 END_TEST
 
 Suite *test_atan(void) {
-  Suite *suite = suite_create("***s21_atan***");
+  Suite *suite = suite_create("\033[45m***s21_atan***\033[0m");
   TCase *test_case = tcase_create("s21_atan_tc");
   tcase_add_test(test_case, atan_1);
   tcase_add_test(test_case, atan_2);

@@ -14,7 +14,7 @@ START_TEST(sqrt_5) {
 END_TEST
 
 Suite *test_sqrt(void) {
-  Suite *suite = suite_create("***s21_sqrt***");
+  Suite *suite = suite_create("\033[45m***s21_sqrt***\033[0m");
   TCase *test_case = tcase_create("s21_sqrt_tc");
   tcase_add_test(test_case, sqrt_1);
   tcase_add_test(test_case, sqrt_2);

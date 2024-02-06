@@ -10,7 +10,7 @@ START_TEST(ceil_4) { ck_assert_ldouble_eq(s21_ceil(-0.654), ceil(-0.654)); }
 END_TEST
 
 Suite *test_ceil(void) {
-  Suite *suite = suite_create("***s21_ceil***");
+  Suite *suite = suite_create("\033[45m***s21_ceil***\033[0m");
   TCase *test_case = tcase_create("s21_ceil_tc");
   tcase_add_test(test_case, ceil_1);
   tcase_add_test(test_case, ceil_2);

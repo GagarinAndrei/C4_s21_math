@@ -14,7 +14,7 @@ START_TEST(cos_4) {
 END_TEST
 
 Suite *test_cos(void) {
-  Suite *suite = suite_create("***s21_cos***");
+  Suite *suite = suite_create("\033[45m***s21_cos***\033[0m");
   TCase *test_case = tcase_create("s21_cos_tc");
   tcase_add_test(test_case, cos_1);
   tcase_add_test(test_case, cos_2);

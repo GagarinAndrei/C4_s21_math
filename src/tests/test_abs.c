@@ -10,7 +10,7 @@ START_TEST(abs_4) { ck_assert_int_eq(s21_abs(27), abs(27)); }
 END_TEST
 
 Suite *test_abs(void) {
-  Suite *suite = suite_create("***s21_abs***");
+  Suite *suite = suite_create("\033[45m***s21_abs***\033[0m");
   TCase *test_case = tcase_create("s21_abs_tc");
   tcase_add_test(test_case, abs_1);
   tcase_add_test(test_case, abs_2);

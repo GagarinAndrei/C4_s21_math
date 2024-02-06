@@ -10,7 +10,7 @@ START_TEST(acos_4) { ck_assert_double_nan(s21_acos(1.2)); }
 END_TEST
 
 Suite *test_acos(void) {
-  Suite *suite = suite_create("***s21_acos***");
+  Suite *suite = suite_create("\033[45m***s21_acos***\033[0m");
   TCase *test_case = tcase_create("s21_acos_tc");
   tcase_add_test(test_case, acos_1);
   tcase_add_test(test_case, acos_2);

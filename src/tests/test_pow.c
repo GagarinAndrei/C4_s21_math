@@ -18,7 +18,7 @@ START_TEST(pow_5) { ck_assert_double_nan(s21_pow(-9, 3.3)); }
 END_TEST
 
 Suite *test_pow(void) {
-  Suite *suite = suite_create("***s21_pow***");
+  Suite *suite = suite_create("\033[45m***s21_pow***\033[0m");
   TCase *test_case = tcase_create("s21_pow_tc");
   tcase_add_test(test_case, pow_1);
   tcase_add_test(test_case, pow_2);

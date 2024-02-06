@@ -17,6 +17,11 @@ int main(void) {
     srunner_free(sr);
   }
 
-  printf("########TESTS FAILED: %d########", failed);
+  if (failed > 0)
+    printf("\033[41m============ TESTS FAILED: %d ===========\033[0m\n",
+           failed);
+  else
+    printf("\033[42m============ TESTS FAILED: %d ===========\033[0m\n",
+           failed);
   return 0;
 }

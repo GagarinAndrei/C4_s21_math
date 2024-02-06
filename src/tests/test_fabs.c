@@ -10,7 +10,7 @@ START_TEST(fabs_4) { ck_assert_ldouble_eq(s21_fabs(-0.27), fabs(-0.27)); }
 END_TEST
 
 Suite *test_fabs(void) {
-  Suite *suite = suite_create("***s21_fabs***");
+  Suite *suite = suite_create("\033[45m***s21_fabs***\033[0m");
   TCase *test_case = tcase_create("s21_fabs_tc");
   tcase_add_test(test_case, fabs_1);
   tcase_add_test(test_case, fabs_2);

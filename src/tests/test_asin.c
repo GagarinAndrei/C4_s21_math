@@ -19,7 +19,7 @@ START_TEST(asin_10) { ck_assert_double_nan(s21_asin(-S21_INF)); }
 END_TEST
 
 Suite *test_asin(void) {
-  Suite *suite = suite_create("***s21_asin***");
+  Suite *suite = suite_create("\033[45m***s21_asin***\033[0m");
   TCase *test_case = tcase_create("s21_asin_tc");
   tcase_add_test(test_case, asin_1);
   tcase_add_test(test_case, asin_2);
