@@ -25,7 +25,10 @@ gcov_report: clean s21_math.a
 	open ./report/index.html
 
 clang:
-	clang-format -n -style=google tests/*.c tests/*.h lib/*.c *.h *.c
+	clang-format -n -style=google tests/*.c tests/*.h *.h *.c
+
+clangi:
+	clang-format -i -style=google tests/*.c tests/*.h *.h *.c
 
 valgrind: clean s21_math.a
 	$(CC) $(CFLAGS) tests/*.c s21_math.a $(CHECKFLAGS) -o s21_math

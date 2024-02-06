@@ -139,12 +139,12 @@ long double s21_sqrt(double x) { return s21_pow(x, 0.5); }
 
 long double s21_tan(double x) { return s21_sin(x) / s21_cos(x); }
 
-int s21_factorial(int n) {
-  if (n < 0) {
-    return S21_NAN;
-  }
-  if (n == 1 || n == 0) {
-    return 1;
-  } else
-    return s21_factorial((n - 1)) * n;
-}
+// int s21_factorial(int n) {
+//   if (n < 0) {
+//     return S21_NAN;
+//   }
+//   if (n == 1 || n == 0) {
+//     return 1;
+//   } else
+//     return s21_factorial((n - 1)) * n;
+// }
