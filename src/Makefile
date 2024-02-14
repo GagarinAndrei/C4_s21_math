@@ -2,7 +2,8 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra -std=c11
 
 ifeq ($(shell uname), Linux)
-	CHECKFLAGS=-lcheck -lm -lpthread -lrt -lsubunit
+	CHECKFLAGS=-lcheck -lm -lpthread -lrt 
+#-lsubunit
 else
 	CHECKFLAGS=-lcheck -lm -lpthread
 endif
@@ -22,7 +23,7 @@ gcov_report: clean s21_math.a
 	./s21_math
 	lcov -t "./s21_math" -o report.info --no-external -c -d .
 	genhtml -o report report.info
-	open ./report/index.html
+	firefox ./report/index.html
 
 clang:
 	clang-format -n -style=google tests/*.c tests/*.h *.h *.c

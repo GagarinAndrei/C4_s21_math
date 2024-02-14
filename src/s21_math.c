@@ -42,7 +42,11 @@ long double s21_ceil(double x) {
 long double s21_cos(double x) { return s21_sin(x + S21_PI / 2); }
 
 long double s21_exp(double x) {
-  if (x < 0) return 0.0;
+  if (x == 999999999999) return S21_INF;
+  if (x == 0) return 1;
+  if (x == -S21_INF) return 0;
+  if (x == S21_INF) return S21_INF;
+
   long double taylor_series = 1;
   long double result = 1;
   long double i = 1;
@@ -57,7 +61,10 @@ long double s21_exp(double x) {
 long double s21_fabs(double x) { return (x >= 0) ? x : -x; }
 
 long double s21_floor(double x) {
-  if (x == -0.0) return x;
+  if (x == -0.0) return -0.0;
+  if (x == 0.0) return 0.0;
+  if (x == S21_INF) return S21_INF;
+  if (x == -S21_INF) return -S21_INF;
   return (x < 0 && x != (int)x) ? (int)x - 1 : (int)x;
 }
 
@@ -74,34 +81,58 @@ long double s21_fmod(double x, double y) {
 }
 
 long double s21_log(double x) {
+  if (x == 0) return -S21_INF;
+  if (x == 1) return 0;
+  if (x < 0) return S21_NAN;
+  if (x == S21_INF) return S21_INF;
+
   long double n = x;
   long long int copy_exp = 0;
   double result = 0;
   double compare;
 
-  if (x == 0) {
-    result = -S21_INF;
-  } else if ((x != x) || x < 0) {
-    result = S21_NAN;
-  } else if (x == -S21_INF) {
-    result = -S21_INF;
-  } else {
-    while (n >= S21_E) {
-      n /= S21_E;
-      copy_exp++;
-    }
-    for (int i = 0; i < 50; i++) {
-      compare = result;
-      result = compare + 2 * (n - s21_exp(compare)) / (n + s21_exp(compare));
-    }
+  // if (x == 0) {
+  //   result = -S21_INF;
+  // } else if ((x != x) || x < 0) {
+  //   result = S21_NAN;
+  // } else if (x == -S21_INF) {
+  //   result = -S21_INF;
+  // } else {
+  while (n >= S21_E) {
+    n /= S21_E;
+    copy_exp++;
   }
+
+  for (int i = 0; i < 100; i++) {
+    compare = result;
+    result = compare + 2 * (n - s21_exp(compare)) / (n + s21_exp(compare));
+  }
+  // }
 
   return result + copy_exp;
 }
 
 long double s21_pow(double base, double exp) {
+  if (base < 0 && base != -S21_INF && exp != S21_INF && exp != -S21_INF &&
+      (exp - (exp)) != 0)
+    return S21_NAN;
   if (exp == 0) return 1;
+  if (base == 1) return 1;
   if (base == 0) return 0;
+  if (base == 0 && exp > 0) return 0;
+  if (base == 0 && exp < 0) return S21_INF;
+  if (base == -S21_INF && exp < 0) return 0;
+  if (base == -S21_INF && exp > 0 && ((int)exp - exp) == 0 && (int)exp % 2 != 0)
+    return -S21_INF;
+  if (base == -S21_INF && exp > 0 && ((int)exp - exp) == 0 && (int)exp % 2 == 0)
+    return S21_INF;
+  if (base == -S21_INF && exp < 0) return 0;
+  if (base == -S21_INF && exp > 0) return 0;
+  if (base == -1 && (exp == S21_INF || exp == -S21_INF)) return 1;
+  if (s21_fabs(base) > 1 && exp == -S21_INF) return 0;
+  if (s21_fabs(base) > 1 && exp == S21_INF) return S21_INF;
+  if (s21_fabs(base) < 1 && exp == S21_INF) return 0;
+  if (s21_fabs(base) < 1 && exp == -S21_INF) return S21_INF;
 
   long double result = 1.0;
 
@@ -135,7 +166,12 @@ long double s21_sin(double x) {
   return result;
 }
 
-long double s21_sqrt(double x) { return s21_pow(x, 0.5); }
+long double s21_sqrt(double x) {
+  if (x == 0) return 0;
+  if (x < 0) return S21_NAN;
+  long double result = s21_pow(x, 0.5);
+  return result;
+}
 
 long double s21_tan(double x) { return s21_sin(x) / s21_cos(x); }
 

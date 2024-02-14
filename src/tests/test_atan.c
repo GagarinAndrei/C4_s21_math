@@ -11,6 +11,36 @@ START_TEST(atan_4) {
 }
 END_TEST
 
+START_TEST(atan1) {
+  for (float k = -10; k <= 10; k += 4) {
+    double a = s21_atan(k);
+    double b = atan(k);
+    ck_assert_double_eq_tol(a, b, ACCU);
+  }
+  ck_assert_double_eq_tol(s21_atan(0.0), atan(0.0), ACCU);
+  ck_assert_double_eq_tol(s21_atan(1.0), atan(1.0), ACCU);
+  ck_assert_double_eq_tol(s21_atan(-1.0), atan(-1.0), ACCU);
+  ck_assert_double_eq_tol(s21_atan(S21_INFINITY), atan(S21_INFINITY), ACCU);
+  ck_assert_double_eq_tol(s21_atan(-S21_INFINITY), atan(-S21_INFINITY), ACCU);
+}
+END_TEST
+
+START_TEST(atan__2) {
+  double a = 12;
+  ck_assert_double_eq_tol(atan(a), s21_atan(a), ACCU);
+  a = 0.4;
+  ck_assert_double_eq_tol(atan(a), s21_atan(a), ACCU);
+  a = -0.333;
+  ck_assert_double_eq_tol(atan(a), s21_atan(a), ACCU);
+  a = 30;
+  ck_assert_double_eq_tol(atan(a), s21_atan(a), ACCU);
+  a = 13.54;
+  ck_assert_double_eq_tol(atan(a), s21_atan(a), ACCU);
+  a = S21_E;
+  ck_assert_double_eq_tol(atan(a), s21_atan(a), ACCU);
+}
+END_TEST
+
 Suite *test_atan(void) {
   Suite *suite = suite_create("\033[45m***s21_atan***\033[0m");
   TCase *test_case = tcase_create("s21_atan_tc");
@@ -18,6 +48,8 @@ Suite *test_atan(void) {
   tcase_add_test(test_case, atan_2);
   tcase_add_test(test_case, atan_3);
   tcase_add_test(test_case, atan_4);
+  tcase_add_test(test_case, atan1);
+  tcase_add_test(test_case, atan__2);
 
   suite_add_tcase(suite, test_case);
   return suite;
