@@ -8,7 +8,7 @@
 // #define S21_INF 1.0 / 0.0L
 #define EPSILON 1e-37
 #define PRECISION 1000
-#define ACCUR 1e-6
+#define ACCUR 1e-06
 
 #define INT_MIN -2147483648
 #define INT_MAX +2147483647

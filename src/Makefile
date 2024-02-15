@@ -35,5 +35,9 @@ valgrind: clean s21_math.a
 	$(CC) $(CFLAGS) tests/*.c s21_math.a $(CHECKFLAGS) -o s21_math
 	valgrind --tool=memcheck --leak-check=yes -s ./s21_math
 
+tmp: clean s21_math.a
+	$(CC) $(CFLAGS) tmp_main.c s21_math.a $(CHECKFLAGS) -o s21_math
+	./s21_math
+
 clean:
 	rm -rf s21_math *.a *.o a.out *.gcno *.gcda report report.info

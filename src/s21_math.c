@@ -113,26 +113,28 @@ long double s21_log(double x) {
 }
 
 long double s21_pow(double base, double exp) {
-  if (base < 0 && base != -S21_INF && exp != S21_INF && exp != -S21_INF &&
-      (exp - (exp)) != 0)
-    return S21_NAN;
-  if (exp == 0) return 1;
-  if (base == 1) return 1;
-  if (base == 0) return 0;
-  if (base == 0 && exp > 0) return 0;
   if (base == 0 && exp < 0) return S21_INF;
-  if (base == -S21_INF && exp < 0) return 0;
   if (base == -S21_INF && exp > 0 && ((int)exp - exp) == 0 && (int)exp % 2 != 0)
     return -S21_INF;
   if (base == -S21_INF && exp > 0 && ((int)exp - exp) == 0 && (int)exp % 2 == 0)
     return S21_INF;
+  if (s21_fabs(base) > 1 && exp == S21_INF) return S21_INF;
+  if (s21_fabs(base) < 1 && exp == -S21_INF) return S21_INF;
+  if (base == S21_NAN || exp == S21_NAN) return S21_NAN;
+  if (base < 0 && base != -S21_INF && exp != S21_INF && exp != -S21_INF &&
+      (exp - (exp)) != 0)
+    return S21_NAN;
+  if (exp == 0 || base == 1) return 1;
+  // if (base == 1) return 1;
+  // if (base == 0) return 0;
+  if (base == 0 || (base == 0 && exp > 0) || (base == -S21_INF && exp < 0))
+    return 0;
+  // if (base == -S21_INF && exp < 0) return 0;
   if (base == -S21_INF && exp < 0) return 0;
   if (base == -S21_INF && exp > 0) return 0;
-  if (base == -1 && (exp == S21_INF || exp == -S21_INF)) return 1;
   if (s21_fabs(base) > 1 && exp == -S21_INF) return 0;
-  if (s21_fabs(base) > 1 && exp == S21_INF) return S21_INF;
   if (s21_fabs(base) < 1 && exp == S21_INF) return 0;
-  if (s21_fabs(base) < 1 && exp == -S21_INF) return S21_INF;
+  if (base == -1 && (exp == S21_INF || exp == -S21_INF)) return 1;
 
   long double result = 1.0;
 
