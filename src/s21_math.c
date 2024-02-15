@@ -169,7 +169,9 @@ long double s21_sin(double x) {
 }
 
 long double s21_sqrt(double x) {
+  if (x == S21_INF) return S21_INF;
   if (x == 0) return 0;
+  // if (x == S21_LDBL_MAX) return S21_NAN;
   if (x < 0) return S21_NAN;
   long double result = s21_pow(x, 0.5);
   return result;

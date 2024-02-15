@@ -1,4 +1,5 @@
 #include "tests.h"
+#include <check.h>
 
 START_TEST(sqrt_1) { ck_assert_ldouble_eq(s21_sqrt(0), sqrt(0)); }
 END_TEST
@@ -39,7 +40,7 @@ END_TEST
 
 START_TEST(sqrt5) {
   long double x = S21_LDBL_MAX;
-  ck_assert_float_nan(s21_sqrt(x));
+  ck_assert_float_infinite(s21_sqrt(x));
 }
 END_TEST
 
@@ -57,7 +58,7 @@ END_TEST
 
 START_TEST(sqrt8) {
   long double x = S21_INFINITY;
-  ck_assert_float_nan(s21_sqrt(x));
+  ck_assert_float_infinite(s21_sqrt(x));
 }
 END_TEST
 
